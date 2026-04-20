@@ -54,7 +54,7 @@ Once the server is running, you can access:
 
    ```bash
    # Ubuntu/Debian
-   sudo apt-get update && sudo apt-get install -y libgl1-mesa-glx libglib2.0-0
+   sudo apt-get update && sudo apt-get install -y libgl1 libglib2.0-0
 
    # macOS
    brew install pkg-config
