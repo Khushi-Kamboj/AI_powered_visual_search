@@ -83,9 +83,20 @@ uvicorn main:app --reload
 - Image Processing: PyTorch, OpenCV, and Transformers
 - API Documentation: Swagger UI and ReDoc
 
-## Notes
+## Deployment
 
-- The frontend is configured to proxy API requests to the backend
-- Both services use Docker for production deployment
-- The backend uses CPU-only versions of PyTorch for compatibility
-- Development can be done either with Docker or locally
+### Frontend (Vercel / Netlify)
+
+The project includes `vercel.json` and `netlify.toml` in the root directory to handle the subdirectory structure.
+
+1.  Push your code to GitHub.
+2.  Connect your repository to Vercel or Netlify.
+3.  **Important:** In the deployment settings, ensure the **Root Directory** is set to `frontend`.
+4.  Add an environment variable `NEXT_PUBLIC_API_URL` pointing to your deployed backend URL.
+
+### Backend
+
+The backend is a FastAPI application that should be deployed to a service supporting Python/Docker (e.g., Render, Railway, or Fly.io).
+
+1.  Use the provided `backend/Dockerfile` for deployment.
+2.  Ensure the `API_URL` in the frontend matches the deployed backend URL.
